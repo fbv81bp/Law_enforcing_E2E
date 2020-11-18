@@ -10,4 +10,4 @@ As long as powers in a liberal democracy can be _securely_ separated, sheer theo
 
 # Properties
 * creates 2 sets of backdoor keys for authorities on both ends of the communication channel
-* one set of such authorities can only re-generate the cryptographical keys for the channel, if all if them agree to the eavesdropping and share their portions of the initial key agreement
+* one set of such authorities can only re-generate the cryptographical keys for the channel, if all of them agree to the eavesdropping and share their portions of the initial key agreement
