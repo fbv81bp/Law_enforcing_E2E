@@ -3,6 +3,12 @@
 # Application of this protocol or any variants by nations, companies, or individuals are violations of intellectual property rights!
 
 
+# Some possible variants
+# -over 2 set of authorities for group communication applications
+# -elliptic curve multiplication based Diffie-Hellman instead of modular exponentiation
+# -hashing of sub key results with authority sets fo example to decrease the number of Diffie-Hellman computations
+
+
 from random import randint as rdi
 
 number_of_authorities = 8 # arbitrary
