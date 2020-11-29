@@ -19,3 +19,4 @@ As long as powers in a liberal democracy can be _securely_ separated, sheer theo
 
 https://www.ft.com/content/78ba92ed-94ef-47ce-9157-658e068cd814
 https://www.ft.com/content/67e6263d-f938-44f6-830f-f0a86542f215
+https://www.economist.com/leaders/2020/11/26/democracy-contains-the-seeds-of-its-own-recovery
