@@ -1,0 +1,4 @@
+The "e2ee_backdooring" protocol needs to be hardened against observation of the very last partial key result exchange, because otherwise only a single authority - the owner of the exponent used as last - is capable of spying in on the endpoints with the help of its own key portions.
+
+1) A particular solution is starting with as many seeds as there are authorities and ending every key calculation with another authority's subkey and then mixing these results.
+2) Another solution can be obtained by hashing the subkeys and using this common hash as the secret value for deriving thy final keys of the communicating parties.
