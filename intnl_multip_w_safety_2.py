@@ -9,16 +9,16 @@ from hashlib import sha256 as hash_func
 ''' CONFIGURATION '''
 
 # number of separate authority sets, for example different nations
-number_of_nations = 4 # can be any random number
+number_of_nations = 5 # can be any random number
 
 # numbers of theoretically independent authorities in each nation, that the group communication is taking place at
-number_of_authorities = [5,3,7,4] # can be diverse random numbers
+number_of_authorities = [5,3,7,4,2] # can be diverse random numbers
 
 # number of people communicating in a group, who must share the same final key for the communication
 number_of_participants = 12 # can be any random number
 
 # which set of authorities a certain participant has to agree upon sub key values
-participants_nationality = [1,3,0,1,0,1,0,2,3,3,0,1] # a list containing indexes of the authority sets
+participants_nationality = [1,3,0,1,4,1,0,2,4,3,0,1] # a list containing indexes of the authority sets' nationalities
 
 # pre-agreed parameters of the Diffie-Hellman key exchange
 modulus = 1019 # should be a large safe prime (more like 2^4096 sized Sophie-Germain prime)
@@ -40,8 +40,8 @@ def Diffie_Hellman_for_2(seed, modulus, party_A_secret, party_B_secret):
     party_B_key = pow(party_B_key, party_B_secret, modulus)
     return party_A_key, party_B_key
 
-# key exchanges between participants and their respective nations' local authorities who will store the their portions of keys for
-# eavesdropping if the authorities of any nation can all agree upon the procedure being legal in their local legislation
+# key exchanges between participants and their respective nations' local authorities who will store their portions of keys for
+# eavesdropping if the authorities of a certain nation can all agree upon the procedure being legal in their local legislation
 nations_powerbranches_keys = [[] for i in range(number_of_nations)]
 participants_subkeys = []
 for participants_nation in participants_nationality:
@@ -64,7 +64,7 @@ for participants_nation in participants_nationality:
 print()
 for nation in nations_powerbranches_keys:
     print()
-    print('national key collection')
+    print('national key collections')
     for link in nation:
         print("link's sub keys")
         print(link)
@@ -129,5 +129,5 @@ print()
 print('final communication keys')
 print(participants_keys)
 
-# nations sets of authorities can individually compute the hashes used by individuals on their territory and calculate the last Diffie-Hellman
+# national sets of authorities can individually compute the hashes used by individuals on their territory and calculate the last Diffie-Hellman
 # step of the key exchange if they have first observed the key exchange's last step
